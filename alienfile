@@ -16,6 +16,7 @@ share {
   patch sub {
     my($build) = @_;
 
+    # https://debbugs.gnu.org/cgi/bugreport.cgi?bug=20903
     # bug in automake: it puts the @datadir@ in double quotes
     # in one place in bin/aclocal, which causes Perl to barf
     # if prefix has an at sign (@) in it.  This is commonly
