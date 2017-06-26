@@ -4,6 +4,7 @@ probe sub { 'share' };
 
 share {
   requires 'Alien::autoconf' => 0;
+  requires 'Path::Tiny' => '0.077';
 
   plugin Download => (
     url => 'ftp://ftp.gnu.org/gnu/automake',
@@ -11,5 +12,18 @@ share {
     version => qr/([0-9\.]+)/,
   );
   plugin Extract => 'tar.gz',
+  
+  patch sub {
+    my($build) = @_;
+
+    # bug in automake: it puts the @datadir@ in double quotes
+    # in one place in bin/aclocal, which causes Perl to barf
+    # if prefix has an at sign (@) in it.  This is commonly
+    # the case when using perlbrew.    
+    Path::Tiny->new('bin/aclocal.in')->edit_lines(sub {
+      s/"\@datadir\@/'\@datadir\@'."/g;
+    });
+  };
+  
   plugin 'Build::Autoconf' => ();
 };
