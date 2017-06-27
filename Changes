@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Require Alien::m4
 
 0.02      2017-06-27 05:09:53 -0400
   - Fix requirements for Windows

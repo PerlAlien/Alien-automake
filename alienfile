@@ -4,7 +4,8 @@ probe sub { 'share' };
 
 share {
   requires 'Alien::autoconf' => '0.02';
-  requires 'Path::Tiny' => '0.077';
+  requires 'Alien::m4'       => '0.11';
+  requires 'Path::Tiny'      => '0.077';
 
   plugin Download => (
     url => 'ftp://ftp.gnu.org/gnu/automake',
