@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.02      2017-06-27 05:09:53 -0400
   - Fix requirements for Windows
 
 0.01      2017-06-26 17:22:32 -0400
