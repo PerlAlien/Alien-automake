@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Add diagnostics for which autoconf is being used
 
 0.03      2017-06-27 05:13:27 -0400
   - Require Alien::m4

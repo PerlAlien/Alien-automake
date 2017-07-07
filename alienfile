@@ -28,4 +28,22 @@ share {
   };
   
   plugin 'Build::Autoconf' => ();
+  
+  requires 'IPC::Cmd';
+  requires 'Capture::Tiny';
+  
+  meta->before_hook(build => sub {
+    my $autoconf_bin = IPC::Cmd::can_run('autoconf');
+    print "***************************************************\n";
+    print "autoconf path = @{[ defined $autoconf_bin ? $autoconf_bin : 'undef' ]}\n";
+    if($autoconf_bin)
+    {
+      my($version) = Capture::Tiny::capture_merged(sub {
+        system $autoconf_bin, '--version';
+      });
+      print "[version]\n";
+      print "$version\n";
+    }
+    print "***************************************************\n";
+  });
 };
