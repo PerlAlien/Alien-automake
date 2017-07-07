@@ -31,8 +31,11 @@ share {
   
   requires 'IPC::Cmd';
   requires 'Capture::Tiny';
+  requires 'Path::Tiny';
   
-  meta->before_hook(build => sub {
+  meta->around_hook(build => sub {
+    my($orig, $build, @rest) = @_;
+
     my $autoconf_bin = IPC::Cmd::can_run('autoconf');
     print "***************************************************\n";
     print "autoconf path = @{[ defined $autoconf_bin ? $autoconf_bin : 'undef' ]}\n";
@@ -45,5 +48,31 @@ share {
       print "$version\n";
     }
     print "***************************************************\n";
+     my $ret = eval { $orig->($build, @rest) };
+    print "***************************************************\n";
+    my $log = Path::Tiny->new('config.log');
+    if(-f $log)
+    {
+      print $log->slurp;
+    }
+    else
+    {
+      print "no config.log\n";
+    }
+    print "***************************************************\n";
+
+    my $error = $@;
+    if(my $error = $@)
+    {
+      die $error;
+    }
+    $ret;
   });
+  
+  build [
+    '%{configure} --disable-shared',
+    'false',
+    '%{make}',
+    '%{make} install',
+  ];
 };

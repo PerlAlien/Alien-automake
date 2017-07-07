@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Additional diagnostics
 
 0.04      2017-07-07 03:10:44 -0400
   - Add diagnostics for which autoconf is being used
