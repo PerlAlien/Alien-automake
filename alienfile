@@ -71,7 +71,6 @@ share {
   
   build [
     '%{configure} --disable-shared',
-    'false',
     '%{make}',
     '%{make} install',
   ];
