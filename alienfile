@@ -14,7 +14,7 @@ share {
     filter => qr/^automake-.*\.tar\.gz$/,
     version => qr/([0-9\.]+)/,
   );
-  plugin Extract => 'tar.gz',
+  plugin Extract => 'tar.gz';
   
   patch sub {
     my($build) = @_;
