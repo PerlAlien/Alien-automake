@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Support running out of a blib
 
 0.05      2017-07-08 09:55:42 -0400
   Production version identical to 0.04_02
