@@ -2,8 +2,13 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.08      2017-07-28 11:38:43 -0400
+  - Fix undef warning
+  - Production version otherwise identical to 0.06_02
+    (repair bad 0.07 release)
+
 0.07      2017-07-28 11:34:16 -0400
-  Production version identical to 0.06_01
+  - Production version identical to 0.06_01
 
 0.06_02   2017-07-27 21:46:20 -0400
   - Support running out of a blib on Strawberry Perl
