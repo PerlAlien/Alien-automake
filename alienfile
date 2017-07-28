@@ -51,7 +51,7 @@ share {
         "  my(\$v,\$d) = File::Spec->splitpath(File::Spec->rel2abs(__FILE__));\n",
         "  my \@d = File::Spec->splitdir(\$d);\n",
         "  pop \@d for 1..2;\n",
-        "  \$ENV{ALIEN_AUTOMAKE_ROOT} ||= File::Spec->catpath(\$v,File::Spec->catdir(\@d));\n",
+        "  \$ENV{ALIEN_AUTOMAKE_ROOT} ||= File::Spec->catpath(\$v,File::Spec->catdir(\@d), '');\n",
         "}\n",
         @lines,
       );
