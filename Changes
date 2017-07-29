@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Require autoconf 0.05 for blib fixes
 
 0.08      2017-07-28 11:38:43 -0400
   - Fix undef warning
