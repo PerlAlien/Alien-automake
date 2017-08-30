@@ -1,0 +1,15 @@
+#!/bin/bash -x
+
+set -euo pipefail
+IFS=$'\n\t'
+
+rm -rf /tmp/Alien-autoconf
+
+cpanm -n Dist::Zilla
+
+
+git clone --depth 2 https://github.com/plicease/Alien-autoconf.git /tmp/Alien-autoconf
+cd /tmp/Alien-autoconf
+dzil authordeps --missing | cpanm -n
+dzil listdeps   --missing | cpanm -n
+dzil install --install-command 'cpanm -n .'

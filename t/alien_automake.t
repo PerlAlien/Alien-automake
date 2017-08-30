@@ -8,6 +8,8 @@ unshift @PATH, Alien::autoconf->bin_dir;
 
 alien_ok 'Alien::automake';
 
+note "PERL5LIB=$ENV{PERL5LIB}";
+
 my $wrapper = sub { [@_] };
 
 if($^O eq 'MSWin32')
