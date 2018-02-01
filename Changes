@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use http instead of ftp
 
 0.12      2017-08-24 17:23:06 -0400
   - Override PERL on Windows.
