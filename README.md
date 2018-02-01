@@ -20,9 +20,20 @@ will use that.  If it cannot be found, the source code will be downloaded
 from the internet and it will be installed in a private share location
 for the use of other modules.
 
+# CAVEATS
+
+This module is currently configured to _always_ do a share install.  This is because `system` installs for this alien are not reliable.  Please see 
+this issue for details: [https://github.com/plicease/Alien-autoconf/issues/2](https://github.com/plicease/Alien-autoconf/issues/2) (the issue is for autoconf, but relates to automake as well).  The good
+news is that most of the time you shouldn't need this module _unless_ you are building another alien from source.  If your system provides the package
+that is targeted by the upstream alien I recommend using that.  If you are packaging system packages for your platform then I recommend making sure the
+upstream alien uses the system library so you won't need to install this module.
+
 # SEE ALSO
 
-[Alien](https://metacpan.org/pod/Alien), [Alien::Base](https://metacpan.org/pod/Alien::Base), [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien::Build::Manual::AlienUser)
+- [alienfile](https://metacpan.org/pod/alienfile)
+- [Alien::Build](https://metacpan.org/pod/Alien::Build)
+- [Alien::Build](https://metacpan.org/pod/Alien::Build)
+- [Alien::Autotools](https://metacpan.org/pod/Alien::Autotools)
 
 # AUTHOR
 
