@@ -1,11 +1,16 @@
 language: perl
+
 sudo: false
+dist: trusty
 
 install:
   - perlbrew list
   - cpanm -n Dist::Zilla
   - dzil authordeps --missing | cpanm -n
   - dzil listdeps   --missing | cpanm -n
+  - cpanm -n App::af
+  - af missing --precompile | cpanm -n
+  - af missing              | cpanm -n
 
 perl:
   - "5.14"
