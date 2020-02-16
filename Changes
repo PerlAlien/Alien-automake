@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use https instead of http
 
 0.14      2018-02-01 13:09:06 -0500
   - Use http instead of ftp

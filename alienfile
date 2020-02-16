@@ -17,7 +17,7 @@ share {
   }
 
   plugin Download => (
-    url => 'http://ftp.gnu.org/gnu/automake',
+    url => 'https://ftp.gnu.org/gnu/automake',
     filter => qr/^automake-.*\.tar\.gz$/,
     version => qr/([0-9\.]+)/,
   );
