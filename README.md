@@ -1,4 +1,4 @@
-# Alien::automake [![Build Status](https://secure.travis-ci.org/plicease/Alien-automake.png)](http://travis-ci.org/plicease/Alien-automake)
+# Alien::automake [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-automake.png)](http://travis-ci.org/Perl5-Alien/Alien-automake)
 
 Build or find automake
 
@@ -24,7 +24,7 @@ for the use of other modules.
 
 # CAVEATS
 
-This module is currently configured to _always_ do a share install.  This is because `system` installs for this alien are not reliable.  Please see 
+This module is currently configured to _always_ do a share install.  This is because `system` installs for this alien are not reliable.  Please see
 this issue for details: [https://github.com/plicease/Alien-autoconf/issues/2](https://github.com/plicease/Alien-autoconf/issues/2) (the issue is for autoconf, but relates to automake as well).  The good
 news is that most of the time you shouldn't need this module _unless_ you are building another alien from source.  If your system provides the package
 that is targeted by the upstream alien I recommend using that.  If you are packaging system packages for your platform then I recommend making sure the
