@@ -1,4 +1,4 @@
-# Alien::automake [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-automake.png)](http://travis-ci.org/Perl5-Alien/Alien-automake)
+# Alien::automake [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-automake.png)](http://travis-ci.org/Perl5-Alien/Alien-automake) ![macos](https://github.com/Perl5-Alien/Alien-automake/workflows/macos/badge.svg) ![windows](https://github.com/Perl5-Alien/Alien-automake/workflows/windows/badge.svg)
 
 Build or find automake
 
