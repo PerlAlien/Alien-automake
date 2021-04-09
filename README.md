@@ -39,7 +39,11 @@ upstream alien uses the system library so you won't need to install this module.
 
 # AUTHOR
 
-Graham Ollis <plicease@cpan.org>
+Author: Graham Ollis <plicease@cpan.org>
+
+Contributors:
+
+Roy Storey (KIWIROY)
 
 # COPYRIGHT AND LICENSE
 
