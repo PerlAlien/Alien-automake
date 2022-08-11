@@ -10,6 +10,19 @@ use base qw( Alien::Base );
 # ALIEN SYNOPSIS
 # ALIEN DESCRIPTION
 
+=head1 HELPERS
+
+This L<Alien> provides the following helpers which will execute the corresponding command.  You want
+to use the helpers because they will use the correct incantation on Windows.
+
+=over 4
+
+=item C<automake>
+
+=item C<aclocal>
+
+=back
+
 =head1 CAVEATS
 
 This module is currently configured to I<always> do a share install.  This is because C<system> installs for this alien are not reliable.  Please see
@@ -33,5 +46,23 @@ upstream alien uses the system library so you won't need to install this module.
 =back
 
 =cut
+
+my %helper;
+
+foreach my $command (qw( automake aclocal ))
+{
+  if($^O eq 'MSWin32')
+  {
+    $helper{$command} = sub { qq{sh -c "$command "\$*"" --} };
+  }
+  else
+  {
+    $helper{$command} = sub { $command };
+  }
+}
+
+sub alien_helper {
+  return \%helper;
+}
 
 1;

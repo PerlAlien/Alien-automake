@@ -22,6 +22,14 @@ will use that.  If it cannot be found, the source code will be downloaded
 from the internet and it will be installed in a private share location
 for the use of other modules.
 
+# HELPERS
+
+This [Alien](https://metacpan.org/pod/Alien) provides the following helpers which will execute the corresponding command.  You want
+to use the helpers because they will use the correct incantation on Windows.
+
+- `automake`
+- `aclocal`
+
 # CAVEATS
 
 This module is currently configured to _always_ do a share install.  This is because `system` installs for this alien are not reliable.  Please see
