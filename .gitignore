@@ -1,3 +1,5 @@
 /Alien-automake-*
 /.build
 *.swp
+*.old
+*.orig
